@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch-a-Sketch</title>
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script src="./assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <h1 class="title">Etch-a-Sketch</h1>
+    <div class="container">
+      <div class="board-container"></div>
+      <div class="btn-container">
+        <button class="eraser" id="eraser">Eraser</button>
+        <button class="black" id="black">Black</button>
+        <button class="white" id="white">White</button>
+        <button class="random" id="random" >Random</button>
+        <button class="reset" id="reset" >Reset</button>
+        <!-- onclick="resetBoard()" -->
+        <!-- <button class="blackButton" onclick="changeColor('black')">
+            Black
+          </button>
+          <button class="erasorButton" onclick="changeColor('white')">
+            Erasor
+          </button>
+          <button class="grayButton" onclick="changeColor('gray')">Gray</button>
+          <button class="randomButton" onclick="changeColor('random')">
+            Random
+          </button>
+          <button onclick="resetBoard()">Reset</button> -->
+      </div>
+      <div>
+        <input type="text" placeholder="Size of Board" name="size" id="size" value="16" onchange="changeSize(this.value)">
+        <button for="size">Set Size</button>
+      </div>
+    </div>
+  </body>
+</html>
