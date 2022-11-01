@@ -17,6 +17,15 @@ const createGrid = size => {
 
 createGrid(16);
 
+const resetBoard = () => {
+    const boardContainer = document.querySelector('.board-container');
+    const grid = boardContainer.querySelectorAll('div');
+    grid.forEach((div) => {
+        div.style.backgroundColor = "rgb(62, 75, 92)"
+    });
+    color = "black";
+}
+
 const changeSize = input => {
     if (input >= 1 && input <= 100) {
         //document.querySelector(".error").style.display = "none";
@@ -26,68 +35,31 @@ const changeSize = input => {
         //document.querySelector(".error").style.display = "flex";
     }
 };
-function colorGrid() {
-    if (click) {
-        if (color === "random") {
-            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-        } else {
-            this.style.backgroundColor = color;
-        }
-    }
-}
 
-function changeColor(choice) {
-    color = choice;
+function colorGrid() {
+    this.style.backgroundColor = color;
+
 }
-// function colorGrid() {
-//     // if (click) {
-//     if (color === "random") {
-//         color = `hsl(${Math.random * 360}, 100%, 50%)`;
-//     } else {
-//     this.style.backgroundColor = color;
-// }
-// //}
-// }
-const resetBoard = () => {
-    const boardContainer = document.querySelector('.board-container');
-    const grid = boardContainer.querySelectorAll('div');
-    grid.forEach((div) => {
-        div.style.backgroundColor = "rgb(62, 75, 92)"
-    });
+function randomColor() {
+    return random = setInterval(() => {
+        color = `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`;   
+    }, 1);
 }
-const colorChange = (choice) => {
-    color = choice;
-    
+function stopColor() {
+    clearInterval(random);
 }
-// colorChange();
-document.querySelector("body").addEventListener("click", (e) => {
-    if (e.target.tagName != "BUTTON") {
-      click = !click;
-      if (click) {
-        //document.querySelector(".mode").textContent = "Mode: Coloring";
-      } else {
-        //document.querySelector(".mode").textContent = "Mode: Not Coloring";
-      }
-    }
-  });
-  const btnOptions = document.querySelectorAll(".btn-container");
-  btnOptions.forEach(option => {
-      option.addEventListener('click', (e) => {
-          color = e.target.id;
-          if (color === "white") {
-              color = "white";
-          } else if (color === "reset") {
-              resetBoard();
-          } else if (color === "eraser") {
-              color = "rgb(62, 75, 92)";
-          } 
-          // else if (color === "random") {
-          //     setTimeout(() => {
-          //         color = `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`;
-          //     }, 1);
-          // }
-          else {
-              color;
-          }
-      })
-  })
+const colorChange = () => {
+    const btnOptions = document.querySelectorAll(".btn-container");
+    btnOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+            color = e.target.id;
+            stopColor();
+            if (color === "white") color = "white"; 
+            else if (color === "reset") resetBoard();
+            else if (color === "eraser") color = "rgb(62, 75, 92)";
+            else if (color === "black") color = "black";
+            else randomColor();
+        })
+    })
+}
+colorChange();
