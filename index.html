@@ -21,9 +21,13 @@
         <button class="reset" id="reset">Reset</button>
       </div>
       <div>
-        <input type="text" placeholder="Size of Board" name="size" id="size" value="16" onchange="changeSize(this.value)">
-        <button for="size">Set Size</button>
+        <input type="range" name="size" id="size" min="1" max="100" value="16" onchange="changeSize(this.value)">
+        <button for="size" class="size-btn">Set Size</button>
       </div>
+      <div class="output-container">
+      <textarea class="output" name="output" id="output1" cols="20" rows="1" disabled></textarea>
+      <textarea class="output" name="output" id="output2" cols="20" rows="1" disabled></textarea>
+    </div>
     </div>
   </body>
 </html>

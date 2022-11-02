@@ -1,5 +1,10 @@
 let color = "black";
 let click = true;
+const outputBox1 = document.querySelector("#output1");
+const outputBox2 = document.querySelector("#output2");
+outputBox1.textContent = `Color: ${color}`;
+outputBox2.textContent = "Mode: Coloring";
+
 const createGrid = size => {
     const boardContainer = document.querySelector('.board-container');
     const grid = boardContainer.querySelectorAll('div');
@@ -24,6 +29,7 @@ const resetBoard = () => {
         div.style.backgroundColor = "rgb(62, 75, 92)"
     });
     color = "black";
+    outputBox1.textContent = `Color: ${color}`;
 }
 
 const changeSize = input => {
@@ -32,13 +38,15 @@ const changeSize = input => {
         createGrid(input);
     } else {
         console.log("ERROR invalid Size");
+        outputBox1.textContent = `ERROR invalid Size [${input}]`;
         //document.querySelector(".error").style.display = "flex";
     }
 };
 
 function colorGrid() {
+    if(click) {
     this.style.backgroundColor = color;
-
+}
 }
 function randomColor() {
     return random = setInterval(() => {
@@ -54,12 +62,33 @@ const colorChange = () => {
         option.addEventListener('click', (e) => {
             color = e.target.id;
             stopColor();
-            if (color === "white") color = "white"; 
-            else if (color === "reset") resetBoard();
-            else if (color === "eraser") color = "rgb(62, 75, 92)";
-            else if (color === "black") color = "black";
-            else randomColor();
-        })
-    })
-}
+            if (color === "white") {
+                outputBox1.textContent = `Color: ${color}`;
+                color = "white";
+            } else if (color === "reset"){
+                outputBox1.textContent = `Color: ${color}`;
+                resetBoard();
+            } else if (color === "eraser"){
+                outputBox1.textContent = `Color: ${color}`;
+                color = "rgb(62, 75, 92)";
+            } else if (color === "black"){
+                outputBox1.textContent = `Color: ${color}`;
+                color = "black";
+            } else{
+                outputBox1.textContent = `Color: ${color}`;
+                randomColor();
+            };
+        });
+    });
+};
 colorChange();
+document.querySelector("body").addEventListener("click", (e) => {
+    if (e.target.tagName != "BUTTON") {
+      click = !click;
+      if (click) {
+        outputBox2.textContent = "Mode: Coloring";
+      } else {
+        outputBox2.textContent = "Mode: Not Coloring";
+      }
+    }
+});

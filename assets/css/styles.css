@@ -9,6 +9,7 @@
 
 body {
     min-height: 100vh;
+    min-width: 100vh;
     background-color: rgb(31, 41, 55);
     /* background-color: rgb(62, 75, 92); */
     color: rgb(249, 250, 248);
@@ -18,12 +19,12 @@ body {
 
 .title {
     text-align: center;
-    font-size: 45px;
-    padding: 2rem;
+    font-size: 40px;
+    padding: 1rem;
 }
 .board-container {
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     display: grid;
 }
 .container {
@@ -31,4 +32,22 @@ body {
     justify-content: center;
     align-items: center;
     flex-flow: column wrap;
+    gap: 15px;
+}
+.btn-container button {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.output-container {
+    display: flex;
+    gap: 8px;
+}
+.output {
+    resize: none;
+    background-color: rgb(31, 41, 55);
+    padding: 1px;
+    text-align: center;
+    color: rgb(249, 250, 248);
+    border-radius: 2px;
 }
