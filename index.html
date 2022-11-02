@@ -9,7 +9,21 @@
     <script src="./assets/js/main.js" defer></script>
   </head>
   <body>
+    <div class="main-container">
     <h1 class="title">Etch-a-Sketch</h1>
+    <div class="click-control">
+      <span class="click-mode-text">
+        Click to Pause
+      </span>
+      <label class="click-mode-on" for="click-mode">
+        <input onchange="clickSwitch()" id="on-btn" type="radio" name="click-mode" checked>
+        On
+      </label>
+      <label class="click-mode-off" for="click-mode">
+        <input onchange="clickSwitch()" id="off-btn" type="radio" name="click-mode">
+        Off
+      </label>
+    </div>
     <div class="container">
       <div class="board-container"></div>
       <div class="btn-container">
@@ -26,11 +40,12 @@
         />
         <button class="reset" id="reset">Reset</button>
       </div>
+      
       <div class="size-controls">
         <input
           type="range"
           name="size"
-          class="size-slider"
+          class="size-slider slider"
           min="1"
           max="100"
           value="16"
@@ -68,5 +83,6 @@
         ></textarea>
       </div>
     </div>
+  </div>
   </body>
 </html>
