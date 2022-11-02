@@ -39,6 +39,10 @@ body {
     border-radius: 5px;
     font-size: 15px;
 }
+.picker, #color-picker {
+    /* padding: px; */
+    border: 15px solid #FF0000;
+}
 .output-container {
     display: flex;
     gap: 8px;

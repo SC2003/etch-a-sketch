@@ -74,7 +74,11 @@ const colorChange = () => {
             } else if (color === "black"){
                 outputBox1.textContent = `Color: ${color}`;
                 color = "black";
-            } else{
+            } else if (color === "color-picker") {
+                outputBox1.textContent = `Color: ${e.target.value}`;
+                e.target.style.cssText = `border: 15px solid ${e.target.value}`
+                color = e.target.value;
+            }else{
                 outputBox1.textContent = `Color: ${color}`;
                 randomColor();
             };
