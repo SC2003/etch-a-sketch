@@ -26,7 +26,7 @@ const createGrid = size => {
     };
 
     colorChange();
-
+    clickSwitch();
     randomColorBG();
 };
 
