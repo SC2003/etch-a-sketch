@@ -6,21 +6,19 @@
     box-sizing: border-box;
     /* border: 1px solid red; */
 }
+
 body {
-    
     background-color: rgb(31, 41, 55);
-    /* background-color: rgb(62, 75, 92); */
     color: rgb(255, 255, 255);
     font-family: 'Courier New', Courier, monospace;
-
 }
+
 .main-container {
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background: linear-gradient(rgba(96, 79, 252, 0.082), white); */
 }
 
 .title {
@@ -28,12 +26,14 @@ body {
     font-size: 40px;
     padding: 1rem;
 }
+
 .click-control {
     margin-bottom: 20px;
 }
+
 .board-container {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     display: grid;
 }
 
@@ -47,33 +47,68 @@ body {
     align-items: center;
     gap: 15px;
     min-width: 300px;
-    min-height: 300px;
-    width: 70vw;
-    height: 60vh;
+    min-height: 500px;
+    width: 60vw;
+    height: 60vw;
     max-width: 600px;
     max-height: 600px;
 }
-/* @media (max-width: 480px){
+
+@media (max-width: 450px) {
     body {
         height: 100vh;
         width: 100vw;
     }
+
     .board-container:hover {
         cursor: default;
     }
+
     .board-container {
         width: 90vw;
-        height: 100vh;
-        display: grid;
-        margin-bottom: 50px;
+        height: 90vh;
     }
-    .btn-container {
+
+    .btn-container,
+    .size-controls,
+    .output-container {
         display: flex;
         flex-wrap: wrap;
-        flex: 2;
         gap: 10px;
     }
-} */
+}
+
+@media (max-width: 345px) {
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .board-container:hover {
+        cursor: default;
+    }
+
+    .board-container {
+        width: 60vw;
+        height: 60vh;
+    }
+
+    .btn-container,
+    .size-controls,
+    .output-container,
+    .title,
+    .click-control{
+        display: flex;
+        flex-flow: column wrap;
+        gap: 10px;
+    }
+    .title {
+        font-size: 25px;
+        padding: 1rem;
+    }
+
+}
+
 .btn-container button,
 .size-controls button {
     padding: 5px 10px;
