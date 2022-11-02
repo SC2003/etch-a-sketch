@@ -1,9 +1,15 @@
 let color = "black";
+
 let click = true;
+
 const outputBox1 = document.querySelector("#output1");
+
 const outputBox2 = document.querySelector("#output2");
+
 outputBox1.textContent = `Color: ${color}`;
+
 outputBox2.textContent = "Mode: Coloring";
+
 
 const createGrid = size => {
     const boardContainer = document.querySelector('.board-container');
@@ -18,6 +24,10 @@ const createGrid = size => {
         grid.style.backgroundColor = 'rgb(62, 75, 92)';
         boardContainer.insertAdjacentElement("beforeend", grid);
     };
+
+    colorChange();
+
+    randomColorBG();
 };
 
 createGrid(16);
@@ -41,19 +51,27 @@ const changeSize = input => {
 };
 
 function colorGrid() {
-    if(click) {
-    this.style.backgroundColor = color;
-}
+    if (click) {
+        this.style.backgroundColor = color;
+    }
 }
 function randomColor() {
     return random = setInterval(() => {
-        color = `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`;   
+        color = `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`;
     }, 1);
 }
 function stopColor() {
     clearInterval(random);
 }
-const colorChange = () => {
+
+function randomColorBG() {
+    return bg = setInterval(() => {
+        const randomBtn = document.querySelector("#random");
+        let bg = `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`;
+        randomBtn.style.cssText = `background-color: ${bg}; border: 1px solid ${bg};`;
+    }, 500);
+}
+function colorChange() {
     const btnOptions = document.querySelectorAll(".btn-container");
     btnOptions.forEach(option => {
         option.addEventListener('click', (e) => {
@@ -62,34 +80,34 @@ const colorChange = () => {
             if (color === "white") {
                 outputBox1.textContent = `Color: ${color}`;
                 color = "#fff";
-            } else if (color === "reset"){
+            } else if (color === "reset") {
                 outputBox1.textContent = `Color: ${color}`;
                 resetBoard();
-            } else if (color === "eraser"){
+            } else if (color === "eraser") {
                 outputBox1.textContent = `Color: ${color}`;
                 color = "rgb(62, 75, 92)";
-            } else if (color === "black"){
+            } else if (color === "black") {
                 outputBox1.textContent = `Color: ${color}`;
                 color = "black";
             } else if (color === "color-picker") {
                 outputBox1.textContent = `Color: ${e.target.value}`;
-                e.target.style.cssText = `border: 15px solid ${e.target.value}`
                 color = e.target.value;
-            }else{
+                e.target.style.cssText = `background-color: ${color}; border: 15px solid ${color};`
+            } else {
                 outputBox1.textContent = `Color: ${color}`;
                 randomColor();
             };
         });
     });
 };
-colorChange();
+
 document.querySelector("body").addEventListener("click", (e) => {
     if (e.target.tagName != "BUTTON") {
-      click = !click;
-      if (click) {
-        outputBox2.textContent = "Mode: Coloring";
-      } else {
-        outputBox2.textContent = "Mode: Not Coloring";
-      }
+        click = !click;
+        if (click) {
+            outputBox2.textContent = "Mode: Coloring";
+        } else {
+            outputBox2.textContent = "Mode: Not Coloring";
+        }
     }
 });

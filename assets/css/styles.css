@@ -12,7 +12,7 @@ body {
     min-width: 100vh;
     background-color: rgb(31, 41, 55);
     /* background-color: rgb(62, 75, 92); */
-    color: #fff;
+    color: rgb(255, 255, 255);
     font-family: 'Courier New', Courier, monospace;
 
 }
@@ -38,10 +38,32 @@ body {
     padding: 5px;
     border-radius: 5px;
     font-size: 15px;
+    font-weight: bold;
 }
-.picker, #color-picker {
-    /* padding: px; */
+#color-picker {
+    background-color: #FF0000;
     border: 15px solid #FF0000;
+    font-size: 15px;
+    font-weight: bold;
+}
+.size-controls {
+    display: flex;
+    gap: 15px;
+    
+}
+.size-controls input {
+    /* background-color: rgb(62, 75, 92); */
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+.size-controls button {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
 }
 .output-container {
     display: flex;
@@ -54,4 +76,6 @@ body {
     text-align: center;
     color: rgb(249, 250, 248);
     border-radius: 2px;
+    font-size: 15px;
+    font-weight: bold;
 }
