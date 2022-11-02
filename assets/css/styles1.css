@@ -1,0 +1,158 @@
+*,
+*::after,
+*::before {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vh;
+    background-color: rgb(31, 41, 55);
+    /* background-color: rgb(62, 75, 92); */
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    padding: 1rem;
+}
+
+.board-container {
+    width: 450px;
+    height: 450px;
+    display: grid;
+}
+
+.board-container:hover {
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    gap: 15px;
+}
+
+.btn-container button,
+.size-controls button {
+    padding: 5px 10px;
+    margin: 0 0.1em 0.1em 0;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+button:hover,
+input:hover {
+    cursor: pointer;
+}
+
+#color-picker {
+    background-color: #FF0000;
+    border: 15px solid #FF0000;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.size-controls {
+    display: flex;
+    gap: 15px;
+
+}
+
+.size-controls input {
+    /* background-color: rgb(62, 75, 92); */
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+
+/* .slider {
+
+} */
+
+.output-container {
+    display: flex;
+    gap: 8px;
+}
+
+.output {
+    resize: none;
+    background-color: rgb(31, 41, 55);
+    padding: 1px;
+    text-align: center;
+    color: rgb(249, 250, 248);
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.black {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 2px solid currentColor;
+}
+
+.black:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 2px solid currentColor;
+}
+
+.white {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 2px solid currentColor;
+}
+
+.white:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 2px solid currentColor;
+}
+
+.eraser {
+    background: linear-gradient(0.25turn, rgb(108, 55, 253), rgb(235, 248, 225), rgb(47, 27, 163));
+    color: rgb(0, 0, 0);
+    border: 2px solid currentColor;
+}
+
+.eraser:hover {
+
+    color: rgb(0, 0, 0);
+    background: linear-gradient(0.25turn, rgb(40, 4, 138), rgb(173, 180, 168), rgb(148, 132, 236));
+    border: 2px solid currentColor;
+}
+.reset {
+    background: linear-gradient(0.25turn, rgb(252, 92, 105), rgb(235, 248, 225), rgb(66, 246, 60));
+    color: rgb(0, 0, 0);
+    border: 2px solid currentColor;
+}
+.reset:hover {
+    color: rgb(0, 0, 0);
+    background: linear-gradient(0.25turn, rgb(255, 11, 32), rgb(173, 180, 168), rgb(12, 255, 4));
+    border: 2px solid currentColor;
+}
+.size-btn {
+    background: linear-gradient(0.25turn, rgb(250, 230, 115), rgb(235, 248, 225), rgb(90, 169, 173));
+    color: rgb(0, 0, 0);
+    border: 2px solid currentColor;
+}
+
+.size-btn:hover {
+    color: rgb(0, 0, 0);
+    background: linear-gradient(0.25turn, rgb(255, 220, 15), rgb(173, 180, 168), rgb(6, 250, 255));
+    border: 2px solid currentColor;
+}
