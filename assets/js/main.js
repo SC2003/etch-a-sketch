@@ -34,12 +34,9 @@ const resetBoard = () => {
 
 const changeSize = input => {
     if (input >= 1 && input <= 100) {
-        //document.querySelector(".error").style.display = "none";
         createGrid(input);
     } else {
-        console.log("ERROR invalid Size");
-        outputBox1.textContent = `ERROR invalid Size [${input}]`;
-        //document.querySelector(".error").style.display = "flex";
+        outputBox1.textContent = `ERROR invalid Size`;
     }
 };
 
@@ -64,7 +61,7 @@ const colorChange = () => {
             stopColor();
             if (color === "white") {
                 outputBox1.textContent = `Color: ${color}`;
-                color = "white";
+                color = "#fff";
             } else if (color === "reset"){
                 outputBox1.textContent = `Color: ${color}`;
                 resetBoard();
