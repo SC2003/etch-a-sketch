@@ -48,12 +48,12 @@ body {
     gap: 15px;
     min-width: 300px;
     min-height: 300px;
-    width: 60vw;
-    height: 60vw;
+    width: 70vw;
+    height: 60vh;
     max-width: 600px;
     max-height: 600px;
 }
-@media (max-width: 480px){
+/* @media (max-width: 480px){
     body {
         height: 100vh;
         width: 100vw;
@@ -73,7 +73,7 @@ body {
         flex: 2;
         gap: 10px;
     }
-}
+} */
 .btn-container button,
 .size-controls button {
     padding: 5px 10px;

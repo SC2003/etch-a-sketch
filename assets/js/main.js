@@ -10,8 +10,8 @@ outputBox1.textContent = `Color: ${color}`;
 
 outputBox2.textContent = "Mode: Coloring";
 
-
 const createGrid = size => {
+
     const boardContainer = document.querySelector('.board-container');
     const grid = boardContainer.querySelectorAll('div');
     grid.forEach(div => div.remove());
@@ -69,7 +69,7 @@ function randomColorBG() {
         const randomBtn = document.querySelector("#random");
         let bg = `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`;
         randomBtn.style.cssText = `background-color: ${bg}; border: 1px solid ${bg};`;
-    }, 500);
+    }, 1500);
 }
 function colorChange() {
     const btnOptions = document.querySelectorAll(".btn-container");
@@ -100,8 +100,7 @@ function colorChange() {
         });
     });
 };
-
-document.querySelector("body").addEventListener("click", (e) => {
+function clickMode(e) {
     if (e.target.tagName != "BUTTON") {
         click = !click;
         if (click) {
@@ -110,4 +109,17 @@ document.querySelector("body").addEventListener("click", (e) => {
             outputBox2.textContent = "Mode: Not Coloring";
         }
     }
-});
+};
+
+function clickSwitch() {
+    const onBtn = document.querySelector('#on-btn');
+    const offBtn = document.querySelector('#off-btn');
+    if (onBtn.checked) {
+        outputBox2.textContent = "Mode: Coloring";
+        document.querySelector("body").addEventListener("click", clickMode)
+    } else if (offBtn.checked) {
+        outputBox2.textContent = "Pause Disabled";
+        document.querySelector("body").removeEventListener("click", clickMode)
+        click = true;
+    } else outputBox2.textContent = "ERROR";
+}
